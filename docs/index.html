@@ -69,73 +69,21 @@
         </div>
       </nav>
     
-    <section class="hero is-primary">
-        <div class="hero-body">
-          <div class="container">
-            <h1 class="title">
-                This will be my example
-            </h1>
-            <h2 class="subtitle">
-              Primary subtitle
-            </h2>
-          </div>
-        </div>
-      </section>
 
-    <div class="container">
+    <div class="container" id="controlThis">
 
-      <div class="block">
-        <div class="notification is-success is-light">
-          <ul>
-              <li>Do not Kill</li>
-              <li>Do Not Steal</li>
-              <li>No Adultery</li>
-              <li></li>
-              <li></li>
-          </ul>
-        </div>
-      </div>
-
+    
         <div class="columns">
-            <div class="column">
-                <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
-                      <div class="media">
-                        <div class="media-left">
-                          <figure class="image is-48x48">
-                            <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                          </figure>
-                        </div>
-                        <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                          <p class="subtitle is-6">@johnsmith</p>
-                        </div>
-                      </div>
-                  
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
-                  </div>
-            </div>
             
-            <div class="column is-half">
+            <div class="column is-two-thirds">
                 <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
+                  <header class="card-header">
+                    <p class="card-header-title">
+                      Shop
+                    </p>
+                  </header>
+                
+                  <div class="card-content">
                       <div class="media">
                         <div class="media-left">
                           <figure class="image is-48x48">
@@ -143,29 +91,27 @@
                           </figure>
                         </div>
                         <div class="media-content">
-                          <p class="title is-4">John Smith</p>
-                          <p class="subtitle is-6">@johnsmith</p>
+                          <p class="title is-4">{{person1.name}}</p>
+                          <p class="subtitle is-6">
+                            {{person1.address.street}} <br/>
+                            {{person1.address.city}}, {{person1.address.state}}, {{person1.address.zip}}
+                            
+                          </p>
                         </div>
                       </div>
                   
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
+                     </div>
                   </div>
             </div>
             <div class="column">
                 <div class="card">
-                    <div class="card-image">
-                      <figure class="image is-4by3">
-                        <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="card-content">
+                  <header class="card-header">
+                    <p class="card-header-title">
+                      Cart
+                    </p>
+                  </header>
+                
+                  <div class="card-content">
                       <div class="media">
                         <div class="media-left">
                           <figure class="image is-48x48">
@@ -178,27 +124,36 @@
                         </div>
                       </div>
                   
-                      <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a href="#">#css</a> <a href="#">#responsive</a>
-                        <br>
-                        <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                      </div>
-                    </div>
+                     </div>
                   </div>
             </div>
         </div>
     </div>
 
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
     <script>
-        $(function(){
+        const person1 = {
+          name: "Moshe Plotkin",
+          age: 29,
+          address: {
+            street: '10 S. Oakwood',
+            city: 'New Paltz',
+            state: 'NY',
+            zip: '12561'
+          }
+        };
 
-          $(".card").css("backgroundColor", "#AAFFAA")
+        console.log({person1});
 
+        var app = new Vue({
+          el: '#controlThis',
+          data: {
+            person1
+          }
         })
+
     </script>
 </body>
 </html>
