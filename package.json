@@ -1,0 +1,13 @@
+{
+  "name": "2021spring",
+  "version": "1.0.0",
+  "description": "The server package for our application",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "dotenv": "^8.2.0"
+  }
+}
