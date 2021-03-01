@@ -16,7 +16,8 @@
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
 
-          <router-link to="/" class="navbar-item" >Home</router-link>
+          <router-link to="/" class="navbar-item" >Feed</router-link>
+          <router-link to="/mywall" class="navbar-item" >My Wall</router-link>
           <router-link to="/Documentation"  class="navbar-item">Documentation</router-link>
             
             <div class="navbar-item has-dropdown is-hoverable">
