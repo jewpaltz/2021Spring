@@ -15,7 +15,7 @@
 
       </div>
     <div class="card-image">
-      <figure class="image is-4by3">
+      <figure class="image">
         <img :src="post.src" :alt="post.alt"
         />
       </figure>
