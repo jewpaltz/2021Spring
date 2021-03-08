@@ -1,6 +1,7 @@
 <template>
   <div class="card">
       <div class="card-content">
+          <button class="delete is-pulled-right" @click.prevent="$emit('delete')"></button>
         <div class="media">
             <div class="media-left">
                 <figure class="image is-48x48">

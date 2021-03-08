@@ -3,13 +3,18 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Documentation from '@/views/Documentation';
 import MyWall from '@/views/MyWall';
+import MyFeed from '@/views/MyFeed';
+import Login from '@/views/Login'
+import Session from '../models/Session';
 
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/documentation', name: 'Doc', component: Documentation },
+  { path: '/login', name: 'Login', component: Login },
   { path: '/mywall', name: 'MyWall', component: MyWall },
+  { path: '/feed', name: 'MyFeed', component: MyFeed },
   {
     path: '/about',
     name: 'About',
@@ -27,5 +32,14 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach( (to, from, next) =>{
+    console.log({ from, to })
+    if(to.path == '/mywall' && !Session.user){
+     next('/login') 
+    }else{
+      next();
+    }
+} )
 
 export default router
