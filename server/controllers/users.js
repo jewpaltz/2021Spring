@@ -20,6 +20,7 @@ const app = express.Router();
                 pic:  req.body.pic,
             }) );
             console.log(req.headers);
+            console.log(req.body);
         })
         .patch('/:user_id', (req, res)=> res.send( model.Update(
             req.params.user_id,
