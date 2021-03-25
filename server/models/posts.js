@@ -34,7 +34,7 @@ module.exports.GetAll = ()=> list.map((x, i) => ({
 module.exports.Get = (post_id)=> list[post_id];
 module.exports.Add = (post)=> {
     if(!post.user_handle){
-        throw "Post must have an Owner"
+        throw {code: 422, msg: "Post must have an Owner"}
     }
      list.push(post);
      return { ...post };

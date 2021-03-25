@@ -1,0 +1,36 @@
+http://localhost:3000/users
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    
+    "lastName": "Biden",
+    "handle": "@potus",
+    "password": "DrJill"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+    "handle": "@potus",
+    "password": "DrJill"
+}
+
+###
+http://localhost:3000/posts
+
+###
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "src": "https://bulma.io/images/placeholders/1280x960.png",
+    "alt": "The President's post",
+    "caption": "Lorem Ipsom",
+    "time": "Mon Mar 22 2021 14:23:35 GMT-0400 (Eastern Daylight Time)",
+    "user_handle": "@potus"
+}
