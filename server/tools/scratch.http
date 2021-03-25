@@ -1,11 +1,11 @@
 http://localhost:3000/users
 
 ###
-POST http://localhost:3000/users
+POST http://localhost:3000/users/register
 Content-Type: application/json
 
 {
-    
+    "firstName": "Joe",
     "lastName": "Biden",
     "handle": "@potus",
     "password": "DrJill"
