@@ -2,6 +2,10 @@
 
 */
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+const SALT_ROUNDS = process.env.SALT_ROUNDS;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const list = [
     { 
@@ -40,7 +44,7 @@ module.exports.Add = (user)=> {
 }
 module.exports.Register = async (user)=> {
 
-    const hash = await bcrypt.hash(user.password, 8);
+    const hash = await bcrypt.hash(user.password, +SALT_ROUNDS);
 
     user.password = hash;
 
@@ -84,5 +88,20 @@ module.exports.Login = async (handle, password) =>{
         throw { code: 401, msg: "Wrong Password" };
     }
 
-    return user;
+    const data = { ...user, password: undefined };
+
+    const token = jwt.sign(data, JWT_SECRET)
+
+    return { user, token };
+}
+
+module.exports.FromJWT = async (token) =>{
+    try {
+        const user = jwt.verify(token, JWT_SECRET);
+        return user;       
+    } catch (error) {
+        console.log({error});
+        return null;
+    }
+
 }
