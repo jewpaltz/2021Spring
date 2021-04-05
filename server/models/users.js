@@ -13,7 +13,9 @@ const list = [
         lastName: 'Plotkin',
         handle: '@JewPaltz',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
-        password: 'Me',
+        password: '$2b$08$ovDdePT2UjP9nkMaOhpFgOQEsBclWpB9RfS2p5XZwq.vDIzwNw5ke',
+        isAdmin: true,
+        following: [ { handle: '@vp', isApproved: true }, { handle: '@johnsmith', isApproved: true }, ],
     },
     { 
         firstName: 'Kamala',
@@ -21,6 +23,8 @@ const list = [
         handle: '@vp',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
         password: 'Her',
+        isAdmin: true,
+        following: [ { handle: '@johnsmith', isApproved: true }, ],
     },
     { 
         firstName: 'John',
@@ -28,6 +32,8 @@ const list = [
         handle: '@johnsmith',
         pic: 'https://bulma.io/images/placeholders/96x96.png',
         password: 'BeepBop',
+        isAdmin: true,
+        following: [ { handle: '@vp', isApproved: true }, ],
     },
 
 ];
@@ -92,7 +98,7 @@ module.exports.Login = async (handle, password) =>{
 
     const token = jwt.sign(data, JWT_SECRET)
 
-    return { user, token };
+    return { user: data, token };
 }
 
 module.exports.FromJWT = async (token) =>{

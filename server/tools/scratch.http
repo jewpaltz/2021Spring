@@ -16,21 +16,34 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
+    "handle": "@JewPaltz",
+    "password": "Me"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
     "handle": "@potus",
     "password": "DrJill"
 }
 
 ###
-http://localhost:3000/posts
+http://localhost:3000/posts/@vp
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJKb2UiLCJsYXN0TmFtZSI6IkJpZGVuIiwiaGFuZGxlIjoiQHBvdHVzIiwiaWF0IjoxNjE3NjQ4MTgzfQ.zomTcoWyunZAAvHYNUkPDSlCZpVxoUH52bhADig8otE
+// My token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJNb3NoZSIsImxhc3ROYW1lIjoiUGxvdGtpbiIsImhhbmRsZSI6IkBKZXdQYWx0eiIsInBpYyI6Imh0dHBzOi8vYnVsbWEuaW8vaW1hZ2VzL3BsYWNlaG9sZGVycy85Nng5Ni5wbmciLCJpc0FkbWluIjp0cnVlLCJmb2xsb3dpbmciOlt7ImhhbmRsZSI6IkB2cCIsImlzQXBwcm92ZWQiOnRydWV9LHsiaGFuZGxlIjoiQGpvaG5zbWl0aCIsImlzQXBwcm92ZWQiOnRydWV9XSwiaWF0IjoxNjE3NjQ5Nzk5fQ.fj_6mZMKDQQW3NquPJsfofesWXpzpJ3Pgjks0C3ElaM
 
 ###
 POST http://localhost:3000/posts
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJKb2UiLCJsYXN0TmFtZSI6IkJpZGVuIiwiaGFuZGxlIjoiQHBvdHVzIiwiaWF0IjoxNjE3NjQ4MTgzfQ.zomTcoWyunZAAvHYNUkPDSlCZpVxoUH52bhADig8otE
 
 {
     "src": "https://bulma.io/images/placeholders/1280x960.png",
     "alt": "The President's post",
     "caption": "Lorem Ipsom",
-    "time": "Mon Mar 22 2021 14:23:35 GMT-0400 (Eastern Daylight Time)",
-    "user_handle": "@potus"
+    "time": "Mon Mar 22 2021 14:23:35 GMT-0400 (Eastern Daylight Time)"
+    ,"user_handle": "@vp"
 }
