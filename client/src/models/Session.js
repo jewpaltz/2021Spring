@@ -1,6 +1,8 @@
 /* B"H
     Holds the user session. Is a singleton.
 */
+import { ToastProgrammatic as toastr } from "buefy";
+
 const Session = {
     user: null,
     message: [] // To be used later
@@ -15,3 +17,10 @@ export function Logout(){
     Session.user = null
 }
 
+export function toastError(msg){
+    toastr.open({
+        message: msg,
+        queue: false,
+        type: 'is-danger'
+    })
+}
