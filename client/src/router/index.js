@@ -5,6 +5,7 @@ import Documentation from '@/views/Documentation';
 import MyWall from '@/views/MyWall';
 import MyFeed from '@/views/MyFeed';
 import Login from '@/views/Login'
+import Users from '@/views/Users'
 import Session from '../models/Session';
 
 Vue.use(VueRouter)
@@ -15,6 +16,7 @@ const routes = [
   { path: '/login', name: 'Login', component: Login },
   { path: '/mywall', name: 'MyWall', component: MyWall },
   { path: '/feed', name: 'MyFeed', component: MyFeed },
+  { path: '/users', name: 'Users', component: Users },
   {
     path: '/about',
     name: 'About',
