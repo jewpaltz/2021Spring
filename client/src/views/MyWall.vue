@@ -39,8 +39,8 @@ export default Vue.extend({
         },
         posts: []
     }),
-    mounted() {
-        this.posts = GetMyPosts();
+    async mounted() {
+        this.posts = await GetMyPosts();
     },
     components: {
         ContentCard,
