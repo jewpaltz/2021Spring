@@ -7,6 +7,8 @@ import { api } from "./myFetch";
 
 const Session = {
     user: null,
+    token: null,
+    nextRoute: null,
     message: [] // To be used later
 }
 export default Session;
