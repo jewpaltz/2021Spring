@@ -5,11 +5,14 @@
         <div class="media">
             <div class="media-left">
                 <figure class="image is-48x48">
-                    <img :src="post.user.pic" :alt="post.user.name" />
+                    <img :src="post.user.pic" :alt="`${post.user.firstName} ${post.user.lastName}`" />
                 </figure>
             </div>
             <div class="media-content">
-                <p class="title is-4">{{post.user.name}}</p>
+                <p class="title is-4">
+                  {{post.user.firstName}}
+                  {{post.user.lastName}}
+                </p>
                 <p class="subtitle is-6">{{post.user.handle}}</p>
             </div>
       </div>

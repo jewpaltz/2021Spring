@@ -2,32 +2,6 @@
                   <div class="card">
                     <div class="card-content">
                         <form @submit.prevent="$emit('add')">
-                            <div class="field is-horizontal">
-                                <div class="field-label is-normal">
-                                    <label class="label">Owner</label>
-                                </div>
-                                <div class="field-body">
-                                    <div class="field">
-                                    <p class="control is-expanded has-icons-left">
-                                        <input class="input" type="text" placeholder="Name" v-model="newPost.user.name">
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-user"></i>
-                                        </span>
-                                    </p>
-                                    </div>
-                                    <div class="field">
-                                    <p class="control is-expanded has-icons-left has-icons-right">
-                                        <input class="input" type="text" placeholder="Socialmedia Handle" v-model="newPost.user.handle" >
-                                        <span class="icon is-small is-left">
-                                        <i class="fas fa-envelope"></i>
-                                        </span>
-                                        <span class="icon is-small is-right">
-                                        <i class="fas fa-check"></i>
-                                        </span>
-                                    </p>
-                                    </div>
-                                </div>
-                                </div>
 
                                 <div class="field is-horizontal">
                                 <div class="field-label is-normal">
