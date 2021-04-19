@@ -16,7 +16,7 @@
         <div class="navbar-menu"  :class="{ 'is-active': isActive }">
           <div class="navbar-start">
 
-          <router-link to="/" class="navbar-item" >Feed</router-link>
+          <router-link to="/feed" class="navbar-item" >Feed</router-link>
           <router-link to="/mywall" class="navbar-item" >My Wall</router-link>
           <router-link to="/Documentation"  class="navbar-item">Documentation</router-link>
             
