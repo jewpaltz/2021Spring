@@ -30,7 +30,7 @@
 import Vue from "vue";
 import ContentCard from "../components/ContentCard";
 import ContentCreation from '../components/ContentCreation.vue';
-import { AddPost, GetMyFeed } from "../models/Posts";
+import { AddPost, DeletePost, GetMyFeed } from "../models/Posts";
 import Session from "../models/Session";
 
 export default Vue.extend({
@@ -53,7 +53,8 @@ export default Vue.extend({
             this.posts.unshift(post);
             this.newPost = { user: Session.user }
         },
-        deletePost(i){
+        async deletePost(i){
+            await DeletePost(i);
             this.posts.splice(i, 1);
         }
     }

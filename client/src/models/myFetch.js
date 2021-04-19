@@ -5,7 +5,7 @@ import Session, { toastError } from "./Session";
 
 export const API_ROOT = process.env.VUE_APP_API_ROOT;
 
-export function api(url, data){
+export function api(url, data, method){
 
     let promise;
 
@@ -13,7 +13,7 @@ export function api(url, data){
 
     if(data){
         promise = fetch(API_ROOT + url, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: method ?? 'POST', // *GET, POST, PUT, DELETE, etc.
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
             headers: {
                 ...headers,
