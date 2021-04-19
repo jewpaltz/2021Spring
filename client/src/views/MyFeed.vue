@@ -30,7 +30,7 @@
 import Vue from "vue";
 import ContentCard from "../components/ContentCard";
 import ContentCreation from '../components/ContentCreation.vue';
-import { GetMyFeed } from "../models/Posts";
+import { AddPost, GetMyFeed } from "../models/Posts";
 
 export default Vue.extend({
     data: ()=> ({
@@ -39,16 +39,17 @@ export default Vue.extend({
         },
         posts: []
     }),
-    mounted() {
-        this.posts = GetMyFeed();
+    async mounted() {
+        this.posts = await GetMyFeed();
     },
     components: {
         ContentCard,
         ContentCreation
     },
     methods: {
-        addPost(){
-            this.posts.unshift(this.newPost);
+        async addPost(){
+            const post = await AddPost(this.newPost)
+            this.posts.unshift(post);
             this.newPost = { user: {} }
         },
         deletePost(i){

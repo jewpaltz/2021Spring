@@ -17,3 +17,7 @@ export function GetPostsForUser(handle){
 export function GetMyFeed(){
     return api("posts/feed");
 }
+
+export function AddPost(post){
+    return api("posts", post );
+}
