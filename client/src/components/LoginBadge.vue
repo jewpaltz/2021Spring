@@ -10,7 +10,10 @@
             </a>
         </div>
         <div v-else>
-            Hello {{Session.user.firstName}} {{Session.user.lastName}} {{Session.user.handle}}
+            <img :src="Session.user.profile" />
+            <b> {{Session.user.firstName}} {{Session.user.lastName}} </b>
+            <br />
+            {{Session.user.handle}}
             (<a @click="logout">
                 Log out
             </a>)
