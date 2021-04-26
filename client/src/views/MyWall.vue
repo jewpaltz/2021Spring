@@ -30,12 +30,13 @@
 import Vue from "vue";
 import ContentCard from "../components/ContentCard";
 import ContentCreation from '../components/ContentCreation.vue';
-import { GetMyPosts } from "../models/Posts";
+import { GetMyPosts, AddPost, DeletePost } from "../models/Posts";
+import Session from "../models/Session";
 
 export default Vue.extend({
     data: ()=> ({
         newPost: {
-            user: { }
+            user: Session.user
         },
         posts: []
     }),
@@ -47,11 +48,13 @@ export default Vue.extend({
         ContentCreation
     },
     methods: {
-        addPost(){
-            this.posts.unshift(this.newPost);
-            this.newPost = { user: {} }
+        async addPost(){
+            const post = await AddPost(this.newPost)
+            this.posts.unshift(post);
+            this.newPost = { user: Session.user }
         },
-        deletePost(i){
+        async deletePost(i){
+            await DeletePost(i);
             this.posts.splice(i, 1);
         }
     }

@@ -21,6 +21,8 @@ export default {
     MyNav
   }
 }
+//  "EABMoWFDtX9sBANk9T3oi3IfqsJjDWVUyd5wS7P5XhVRT4s4eLKbAfyf4gwbwgI2ZAwwBrTPIh5Ou5J6ECr10BSnMEw1qjcpP3sm1dkiJFw62ZB2SYAkJ6e5X2UIbzF2aDCZCgFtR3mgeZBoRe72oMw6ZCVdaYFnPLuKKtIsAlLO5fZCNn8UZAJGxlzwkXzY1n4FKxQ0rKNMBgZDZD"
+
         /*global FB*/
         window.fbAsyncInit = function() {
           FB.init({
