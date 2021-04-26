@@ -19,6 +19,12 @@
                                 </div>
                                 </div>
 
+<div class="field is-horizontal">
+    <div class="images">
+        <img v-for="image in images" :key="image.id" :src="image.src" @click="img_click(image)" />
+    </div>
+</div>
+
                                 <div class="field is-horizontal">
                                 <div class="field-label is-normal">
                                     <label class="label">Caption</label>
@@ -57,10 +63,38 @@
 export default {
     props:{
         newPost: Object
+    },
+    data: ()=> ({
+        images: []
+    }),
+    mounted(){
+        /*global FB*/
+        FB.api('me/photos?fields=images', response=>{
+            console.log({response});
+            this.images = response.data.map(x=> ({id: x.id, src: x.images[0].source }) )
+        })
+    },
+    methods: {
+        img_click(image){
+            this.newPost.src = image.src;
+            console.log(this.newPost)
+        }
     }
 }
 </script>
 
 <style>
-
+    .images {
+        display: block;
+    }
+    .images img {
+        box-sizing: border-box;
+        width: 75px;
+        float: left;
+        padding: 3px;
+        border: 1px solid #AABBFF;
+        margin: 5px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
 </style>
